@@ -20,7 +20,7 @@ pipeline {
       steps {
         withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
           sh 'docker build -t kannguyen1010/next-jest-jenkins .'
-          sh 'docker push kannguyen1010/next-jest-jenkins'
+          sh 'docker run -d -p 3000:3000 kannguyen1010/next-jest-jenkins'
 }
       }
     }
