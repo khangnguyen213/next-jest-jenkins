@@ -7,9 +7,12 @@ pipeline {
       }
     }
 
-    stage('log') {
+    stage('build') {
       steps {
-        sh 'ls -la'
+        echo 'Building the app'
+        sh 'npm ci'
+        sh 'npm run build'
+        sh 'npm run test'
       }
     }
 
