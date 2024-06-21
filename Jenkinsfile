@@ -9,9 +9,6 @@ pipeline {
 
     stage('build') {
       steps {
-        echo 'Activate nvm'
-        sh '$HOME/ ~/.nvm/nvm.sh'
-        sh 'nvm use'
         echo 'Building the app'
         sh 'npm ci'
         sh 'npm run build'
